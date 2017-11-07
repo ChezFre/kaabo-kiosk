@@ -320,9 +320,9 @@ aws4@^1.2.1, aws4@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.6.0.tgz#83ef5ca860b2b32e4a0deedee8c771b9db57471e"
 
-"axios@github:contentful/axios#fix/https-via-http-proxy":
-  version "0.16.2"
-  resolved "https://codeload.github.com/contentful/axios/tar.gz/e9a9c62ce02115f7a4d7f197ba43362dcf0ea3d0"
+axios@contentful/axios#fix/https-via-http-proxy:
+  version "0.17.0"
+  resolved "https://codeload.github.com/contentful/axios/tar.gz/a41f3ca97188a3a845d386bb140c424842379a91"
   dependencies:
     follow-redirects "^1.2.3"
     is-buffer "^1.1.5"

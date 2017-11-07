@@ -2,8 +2,10 @@ import React from 'react';
 import Employee from './Employee';
 import { client } from './client';
 import Modal from 'react-modal';
-import Transition from 'react-transition-group/Transition';
 import ContactForm from './ContactForm';
+// import ReactCSSTransitionGroup from 'react-addons-css-transition-group'; 
+import { TransitionGroup, CSSTransition } from 'react-transition-group' // ES6
+
 
 export default class CompanyDetail extends React.Component {
 
@@ -93,26 +95,27 @@ export default class CompanyDetail extends React.Component {
               {this.state.company.description}
             </div>
             <ul className="employees">
-              {this.state.company.employees && this.state.company.employees.map(
-                  (medewerker, index) => (
-                    <li key={index}>
-                      <Transition timeout={duration}>
-                        <Employee
-                          id={medewerker.id}
-                          slug={medewerker.slug}
-                          email={medewerker.email}
-                          phone={medewerker.phone}
-                          onClick={this.showModal}
-                          companyId={this.state.company.id}
-                          companySlug={this.state.company.slug}
-                          firstname={medewerker.voornaam}
-                          lastname={medewerker.achternaam}
-                          highlight={this.props.query}
-                        />
-                      </Transition>
-                    </li>
-                  )
-                )}
+                <TransitionGroup>
+                    {this.state.company.employees && this.state.company.employees.map(
+                        (medewerker, index) => (
+                            <CSSTransition in={true} classNames="slideIn" timeout={250} key={medewerker.id} onExited={() => {}}>
+                                <li>
+                                    <Employee
+                                        id={medewerker.id}
+                                        slug={medewerker.slug}
+                                        email={medewerker.email}
+                                        phone={medewerker.phone}
+                                        onClick={this.showModal}
+                                        companyId={this.state.company.id}
+                                        companySlug={this.state.company.slug}
+                                        firstname={medewerker.voornaam}
+                                        lastname={medewerker.achternaam}
+                                        highlight={this.props.query}
+                                    />
+                                </li>
+                            </CSSTransition>
+                        ))}
+                </TransitionGroup>
             </ul>
 
             <Modal style={{ overlay: { backgroundColor: "rgba(0, 0, 0, 0.4)" }, content: { top: "30px", left: "0", right: "0", bottom: "auto", margin: "auto", width: "555px", height: "325px", padding: "0px", border: "0", borderRadius: "0", overflow: "hidden", borderTop: "5px solid #F5D313", boxShadow: "0 2px 34px rgba(120, 120, 100, 100)" } }} closeTimeoutMS={150} onRequestClose={this.closeModal} shouldCloseOnOverlayClick={true} isOpen={this.state.modalOpen} contentLabel="Contact">

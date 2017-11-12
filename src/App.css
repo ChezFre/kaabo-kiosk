@@ -254,7 +254,9 @@ mark {
     padding: 0;
     -webkit-overflow-scrolling: touch;
     overflow-scrolling: touch;
-    overflow: scroll;
+    overflow-y: scroll;
+
+    overflow-x: hidden;
 
     border-top: 1px solid #E6E9EE;
 }
@@ -480,7 +482,7 @@ mark {
     transform: skewX(-30deg);
 }
 
-.slideIn-exit {
+/* .slideIn-exit {
     transition: all .25s ease-in-out;
 }
 
@@ -488,7 +490,7 @@ mark {
     max-height: 0;
     opacity: 0;
     transform: translateX(100px);
-}
+} */
 
 .slideIn-enter {
     opacity: 0;

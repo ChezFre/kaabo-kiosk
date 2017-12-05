@@ -484,13 +484,13 @@ mark {
 
 /* .slideIn-exit {
     transition: all .25s ease-in-out;
-}
+} */
 
 .slideIn-exit.slideIn-exit-active {
     max-height: 0;
     opacity: 0;
     transform: translateX(100px);
-} */
+}
 
 .slideIn-enter {
     opacity: 0;

@@ -72,18 +72,19 @@ class Client {
     }
 
 
-    contactEmployee( id ) {
-
-        console.log( id );
+    contactEmployee( id, name, email ) {
 
         return fetch( `${process.env.REACT_APP_BACKEND}/notify`, {
             method: 'POST',
             mode: 'cors',
             headers: new Headers({
-		        'Content-Type': 'text/plain'
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
             }),
             body: JSON.stringify({
-                id
+                id,
+                name,
+                email
             })
         })
 

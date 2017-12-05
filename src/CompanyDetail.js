@@ -11,6 +11,7 @@ export default class CompanyDetail extends React.Component {
 
     state = {
         company: {
+            employees: [],
             fields:    {},
         },
         sent:      false,
@@ -66,12 +67,14 @@ export default class CompanyDetail extends React.Component {
         this.props.history.replace(`/company/${this.props.match.params.companyId}/${this.props.match.params.companySlug}`);
     }
 
-    sendForm = ( e, id ) => {
+    sendForm = ( e, id, name, email ) => {
 
         e.preventDefault();
 
+        console.log(id, name, email);
 
-        client.contactEmployee(id)
+
+        client.contactEmployee(id, name, email)
             .then( (res) => {
                 console.log( res );
             });
@@ -87,7 +90,7 @@ export default class CompanyDetail extends React.Component {
 
     render() {
 
-        const duration = 300;
+        // const duration = 300;
 
         return <div className="company--detail">
             {this.state.company.logo && <img src={this.state.company.logo} alt={this.state.company.name} width="50" height="50" className="company__logo" />}
@@ -120,7 +123,7 @@ export default class CompanyDetail extends React.Component {
 
             <Modal style={{ overlay: { backgroundColor: "rgba(0, 0, 0, 0.4)" }, content: { top: "30px", left: "0", right: "0", bottom: "auto", margin: "auto", width: "555px", height: "325px", padding: "0px", border: "0", borderRadius: "0", overflow: "hidden", borderTop: "5px solid #F5D313", boxShadow: "0 2px 34px rgba(120, 120, 100, 100)" } }} closeTimeoutMS={150} onRequestClose={this.closeModal} shouldCloseOnOverlayClick={true} isOpen={this.state.modalOpen} contentLabel="Contact">
               {!this.state.sent && <ContactForm
-                onSubmit={this.sendForm} id={this.state.activeEmployee && this.state.activeEmployee && this.state.activeEmployee.id}
+                onSubmit={this.sendForm} id={this.state.activeEmployee && this.state.activeEmployee.id}
                 firstname={this.state.activeEmployee && this.state.activeEmployee.voornaam}
                 lastname={this.state.activeEmployee && this.state.activeEmployee.achternaam} />}
               {this.state.sent && this.confirm()}

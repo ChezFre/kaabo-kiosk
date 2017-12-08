@@ -10,12 +10,12 @@ export default class Company extends React.Component {
         
         return (
 
-            <div className="company" draggable="false">
-                <NavLink to={`/company/${this.props.id}/${this.props.slug}`}>
-                    <div className="company__logo">
+            <div className="Company" draggable="false">
+                <NavLink to={`/company/${this.props.id}/${this.props.slug}`} className="Company__link">
+                    <div className="Company__logo">
                         { img }
                     </div>
-                    <div className="company__name">
+                    <div className="Company__name">
                         <Highlighter
                             highlightClassName="highlight"
                             textToHighlight={this.props.name}

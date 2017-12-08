@@ -20,7 +20,16 @@ class App extends Component {
     }
 
     receiveEvent = ( data ) => {
-        toast(data.feedback, {
+        
+        let notification = '';
+
+        if( isNaN(data.feedback.payload) ) {
+            notification = 'Deze persoon is momenteel niet aanwezig op de Crib';
+        } else {
+            notification = `Deze persoon komt je binnen ${data.feedback.payload} ophalen!`;
+        }
+        
+        toast( notification, {
             position: toast.POSITION.TOP_RIGHT
         });
 

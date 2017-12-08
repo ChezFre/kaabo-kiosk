@@ -1,0 +1,58 @@
+.CompanyDashboard {
+    max-width: 1280px;
+    margin: auto;
+    list-style: none;
+    
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.CompanyDashboard__company {
+    float: left;
+    margin-left: 10%;
+    width: 17.5%;
+
+    display: flex;
+}
+
+.CompanyDashboard__company:nth-child(4n+1) {
+    margin-left: 0;
+}
+
+.CompanyDashboard__company:nth-child(n+4) {
+    margin-top: 40px;
+}
+
+
+.Company {
+    border: 1px solid #E3E3E3;
+    border-radius: 6px;
+
+    width: 100%;
+}
+
+.Company--active {
+    border-width: 3px;
+    border-image: linear-gradient(45deg, #FC719E 0%, #F99E7A 100%);
+}
+
+.Company__link {
+    display: block;
+
+    padding: 25px;
+    height: 100%;
+}
+
+.Company__logo {
+}
+
+ .Company__logo img {
+    max-width: 300px;
+    max-height: 100px;
+    object-fit: contain;
+    object-position: center;
+
+    display: block;
+    margin: auto;
+ }

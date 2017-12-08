@@ -1,0 +1,15 @@
+.Letterbar {
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+}
+
+.Letterbar__letter {
+    list-style: none;
+    display: inline-block;
+}
+
+.Letterbar__letter--active {
+    background: green;
+}

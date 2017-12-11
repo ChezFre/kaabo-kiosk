@@ -1,12 +1,10 @@
-import React from 'react';
 import './Letterbar.css';
-import classNames from 'classnames'
+
+import React      from 'react';
+import classNames from 'classnames';
+
 
 export default class Letterbar extends React.Component {
-
-    state = {
-        activeChar: ''
-    };
 
     generateChars() {
         let chars = [];
@@ -15,14 +13,13 @@ export default class Letterbar extends React.Component {
 
             let classList = classNames({
                 'Letterbar__letter': true,
-                'Letterbar__letter--active': this.state.activeChar === String.fromCharCode('00' + i)
+                'Letterbar__letter--active': this.props.letter === String.fromCharCode('00' + i)
             });
-            
 
             chars.push(
                 <li key={i}
                     className={classList}
-                    onClick={ () => this.letterClicked( String.fromCharCode('00' + i) ) }>
+                    onClick={() => this.props.onLetterClick( String.fromCharCode('00' + i) ) }>
                     {String.fromCharCode('00' +  i)}
                 </li>
             );
@@ -30,18 +27,6 @@ export default class Letterbar extends React.Component {
 
         return chars;
     }
-
-    letterClicked = (letter) => {
-
-        this.setState({
-            activeChar: letter
-        });
-
-        if( this.props.onLetterClick ) {
-            this.props.onLetterClick( letter );
-        }
-
-    };
     
     render() {
         return (

@@ -66,10 +66,3 @@ body:before {
         transform: scaleY(1);
     }
 }
-
-.Filter {
-    border-style: solid;
-    border-width: 1px 0;
-    border-color: #EBEBEB;
-    padding: 5px 0;
-}

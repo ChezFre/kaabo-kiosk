@@ -1,5 +1,5 @@
 import React from 'react';
-import Style from './Letterbar.css';
+import './Letterbar.css';
 import classNames from 'classnames'
 
 export default class Letterbar extends React.Component {

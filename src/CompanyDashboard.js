@@ -1,6 +1,6 @@
 import React from 'react';
 import Company from './Company'
-import Style from './CompanyDashboard.css';
+import './CompanyDashboard.css';
 
 import { client } from './client';
 
@@ -25,6 +25,28 @@ class CompanyDashboard extends React.Component {
                 });
             });
     }
+
+    // filter = (e) => {
+
+    //     this.setState({
+    //         searchQuery: e.target.value
+    //     });
+
+    //     const value = accent_folder(e.target.value.toLowerCase());
+
+    //     const filteredCompanies = this.state.companies.filter( company => {
+
+    //         const name = accent_folder(company.name);
+    //         const employees = company.employees && company.employees.some( medewerker => fuzzysearch( value, accent_folder(`${medewerker.voornaam.toLowerCase()} ${medewerker.achternaam.toLowerCase()}`) ) );
+
+    //         return fuzzysearch( value, name.toLowerCase() ) || employees;
+
+    //     });
+
+    //     this.setState({
+    //         filteredCompanies
+    //     });
+    // }
 
     handleCompanyClick = (id) => {
         this.setState({ activeCompany: id });

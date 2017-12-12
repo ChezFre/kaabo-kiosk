@@ -1,28 +1,38 @@
-import React from 'react';
+import React       from 'react';
 import Highlighter from 'react-highlight-words';
-import { NavLink } from 'react-router-dom';
+import classNames  from 'classnames';
 
-export default class Company extends React.Component {
+import { withRouter, Link } from 'react-router-dom';
+
+
+class Company extends React.Component {
     
     render() {
         
         const img = (this.props.logo) ? <img src={this.props.logo} alt={this.props.name} /> : '';
+
+        let classList = classNames({
+            'Company': true,
+            'Company--active': this.props.active
+        });
         
         return (
 
-            <div className="company" draggable="false">
-                <NavLink to={`/company/${this.props.id}/${this.props.slug}`}>
-                    <div className="company__logo">
+            <div className={classList} draggable="false" /*onTransitionEnd={this.onActive}*/ onClick={() => this.props.onClick(this.props.id)}>
+                <Link to={`/company/${this.props.id}`} className="Company__link">
+                    <div className="Company__logo">
                         { img }
                     </div>
-                    <div className="company__name">
+                    <div className="Company__name">
                         <Highlighter
                             highlightClassName="highlight"
                             textToHighlight={this.props.name}
                             searchWords={[ this.props.highlight ]} />
                     </div>
-                </NavLink>
+                </Link>
             </div>
         );
     }
 }
+
+export default withRouter(Company);

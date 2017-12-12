@@ -14,9 +14,7 @@ class SocketService {
     };
 
     unsubscribe( callback ) {
-        this.subscribers = this.subscribers.filter( subscriber => {
-            if( subscriber !== callback ) return subscriber;
-        })
+        this.subscribers = this.subscribers.filter( subscriber => subscriber !== callback );
     };
 
     _addListeners() {

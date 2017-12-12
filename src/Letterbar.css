@@ -1,0 +1,52 @@
+.Letterbar {
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+
+    max-width: 90vw;
+}
+
+.Letterbar__letter {
+    list-style: none;
+    display: inline-block;
+
+    position: relative;
+    border-radius: 50%;
+
+    width: 45px;
+    height: 45px;
+
+    text-align: center;
+    line-height: 45px;
+
+    transition: all .25s ease-out;
+}
+
+.Letterbar__letter span {
+    position: relative;
+}
+
+.Letterbar__letter:before {
+    content: '';
+    border-radius: 50%;
+
+    display: block;
+
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+
+    opacity: 0;
+
+    transition: all .25s ease-out;
+
+    background-image: linear-gradient(-48deg, rgba(252, 113, 158, 1) 0%, rgba(249, 158, 122, 1) 100%);
+}
+
+.Letterbar__letter--active {
+    color: #fff;
+}
+
+.Letterbar__letter--active:before {
+    opacity: 1;
+}

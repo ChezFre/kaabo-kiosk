@@ -1,0 +1,15 @@
+.Search__button {
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    transition: all .25s ease-out;
+    background-color: none;
+    border: 0;
+    background-image: linear-gradient(-48deg, #FC719E 0%, #F99E7A 100%);
+
+    text-indent: -9990px;
+
+    -webkit-appearance: none;
+}

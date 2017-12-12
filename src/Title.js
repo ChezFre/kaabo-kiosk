@@ -2,6 +2,10 @@ import React from 'react';
 import './Title.css';
 export default class Title extends React.Component {
 
+    componentWillReceiveProps(nextProps) {
+        console.log(nextProps);
+    }
+
     render() {
         return (
             <header className="Header">

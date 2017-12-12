@@ -26,7 +26,7 @@ export default class Employee extends React.Component {
                 <div className="employee__contact">
                     <ul>
                         <li>
-                            <Link replace={true} to={`/company/${this.props.companyId}/${this.props.companySlug}/employee/${this.props.id}/${this.props.slug}`}>
+                            <Link to={`/company/${this.props.companyId}/${this.props.companySlug}/employee/${this.props.id}/${this.props.slug}/contact`}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" viewBox="0 0 15 14">
                                     <path fill="#00A6FF" d="M7.5,0 C3.3575,0 0,2.91009091 0,6.49918182 C0,8.02009091 0.5825,9.42072727 1.516875,10.4217273 L0,14 L4.726875,12.5618182 C10.66125,14.2150909 15,10.493 15,6.49918182 C15,2.91009091 11.6425,2.2608178e-15 7.5,0 Z"/>
                                 </svg>

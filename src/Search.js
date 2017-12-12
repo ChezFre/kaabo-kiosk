@@ -1,6 +1,8 @@
 import React from 'react';
 import classNames from 'classnames'
 
+import './Search.css';
+
 export default class Search extends React.Component {
 
     render() {

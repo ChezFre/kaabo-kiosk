@@ -4,11 +4,11 @@ import './App.css';
 import {Switch, Route} from 'react-router';
 
 import Splashscreen  from './Splashscreen'
-import Companies     from './Companies';
-import CompanyDetail from './CompanyDetail';
+// import Companies     from './Companies';
+import CompanyView   from './CompanyView';
 
-import socketClient from './socketClient';
-import { toast, ToastContainer } from 'react-toastify'; 
+// import socketClient from './socketClient';
+// import { toast, ToastContainer } from 'react-toastify'; 
 
 
 class App extends Component {
@@ -42,11 +42,10 @@ class App extends Component {
 
         return (
             <div className="App">
-                <ToastContainer closeButton={false} />
+                {/* <ToastContainer closeButton={false} /> */}
                 <Switch>
                         <Route path='/' component={Splashscreen} exact />
-                        <Route path='/company' component={Companies} exact />
-                        <Route path='/company/:companyId' component={CompanyDetail} />
+                        <Route path='/company/:companyId?/:companyName?/:employee?/:employeeId?' component={CompanyView} />
                 </Switch>
             </div>
         );

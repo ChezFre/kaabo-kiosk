@@ -20,7 +20,7 @@ export default class Letterbar extends React.Component {
                 <li key={i}
                     className={classList}
                     onClick={() => this.props.onLetterClick( String.fromCharCode('00' + i) ) }>
-                    {String.fromCharCode('00' +  i)}
+                    <span>{String.fromCharCode('00' +  i)}</span>
                 </li>
             );
         }

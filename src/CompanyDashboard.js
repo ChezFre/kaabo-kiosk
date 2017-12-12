@@ -48,6 +48,10 @@ class CompanyDashboard extends React.Component {
     //     });
     // }
 
+    componentWillReceiveProps(nextProps) {
+        alert(`Scroll to ${nextProps.letter}`);
+    }
+
     handleCompanyClick = (id) => {
         this.setState({ activeCompany: id });
     }

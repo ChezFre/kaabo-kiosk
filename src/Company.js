@@ -1,16 +1,11 @@
-import React from 'react';
+import React       from 'react';
 import Highlighter from 'react-highlight-words';
-// import { NavLink } from 'react-router-dom';
-import classNames from 'classnames';
-import { withRouter } from 'react-router-dom';
+import classNames  from 'classnames';
+
+import { withRouter, Link } from 'react-router-dom';
+
 
 class Company extends React.Component {
-
-    onActive = (e) => {
-        if(e.pseudoElement === '::after' && this.props.active ) {
-            this.props.history.push(`/company/${this.props.id}`);
-        }
-    };
     
     render() {
         
@@ -23,16 +18,18 @@ class Company extends React.Component {
         
         return (
 
-            <div className={classList} draggable="false" onTransitionEnd={this.onActive} onClick={() => this.props.onClick(this.props.id)}>
-                <div className="Company__logo">
-                    { img }
-                </div>
-                <div className="Company__name">
-                    <Highlighter
-                        highlightClassName="highlight"
-                        textToHighlight={this.props.name}
-                        searchWords={[ this.props.highlight ]} />
-                </div>
+            <div className={classList} draggable="false" /*onTransitionEnd={this.onActive}*/ onClick={() => this.props.onClick(this.props.id)}>
+                <Link to={`/company/${this.props.id}`} className="Company__link">
+                    <div className="Company__logo">
+                        { img }
+                    </div>
+                    <div className="Company__name">
+                        <Highlighter
+                            highlightClassName="highlight"
+                            textToHighlight={this.props.name}
+                            searchWords={[ this.props.highlight ]} />
+                    </div>
+                </Link>
             </div>
         );
     }

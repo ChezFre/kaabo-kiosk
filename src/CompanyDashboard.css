@@ -39,7 +39,10 @@
     /* overflow: hidden; */
 
     padding: 25px 10px 15px;
+}
 
+.Company__link {
+    text-decoration: none;
 }
 
 .Company:before {
@@ -75,15 +78,15 @@
     z-index: -1;
 }
 
-.Company--active {
+.Company:active {
     border-color: transparent;
 }
 
-.Company--active:after {
+.Company:active:after {
     opacity: 1;
 }
 
-.Company--active:before {
+.Company:active:before {
     opacity: 0.3;
 }
 

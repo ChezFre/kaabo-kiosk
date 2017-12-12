@@ -9,7 +9,16 @@
     border: 0;
     background-image: linear-gradient(-48deg, #FC719E 0%, #F99E7A 100%);
 
-    text-indent: -9990px;
-
     -webkit-appearance: none;
+
+    position: relative;
+}
+
+.Search__button svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
 }
